@@ -59,10 +59,12 @@ resource "azurerm_network_security_rule" "ntwksr-p4" {
   network_security_group_name = azurerm_network_security_group.ntwksg-p4.name
 }
 
+
 resource "azurerm_subnet_network_security_group_association" "snsga-p4" {
   subnet_id                 = azurerm_subnet.snetp4.id
   network_security_group_id = azurerm_network_security_group.ntwksg-p4.id
 }
+
 
 resource "azurerm_network_interface" "ntwk-nic-p4" {
   name                = "ntwk-nic-p4"
@@ -92,6 +94,7 @@ resource "azurerm_linux_virtual_machine" "tflvm-p4" {
     
   ]
 
+  
   os_disk {
     caching              = "ReadWrite"
     storage_account_type = "Standard_LRS"
