@@ -88,9 +88,9 @@ resource "azurerm_linux_virtual_machine" "tflvm-p4" {
   admin_password                  = "abc59!"
   disable_password_authentication = false
   network_interface_ids = [
-    azurerm_network_interface.ntwk-nic-p4.id,
+  azurerm_network_interface.ntwk-nic-p4.id,
+    
   ]
-
 
   os_disk {
     caching              = "ReadWrite"
@@ -98,9 +98,9 @@ resource "azurerm_linux_virtual_machine" "tflvm-p4" {
   }
 
   source_image_reference {
-    publisher = "Canonical"
-    offer     = "UbuntuServer"
-    sku       = "18.04-LTS"
-    version   = "latest"
+  publisher = "Canonical"
+  offer     = "UbuntuServer"
+  sku       = "18.04-LTS"
+  version   = "latest"
   }
 }
